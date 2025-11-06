@@ -1,0 +1,140 @@
+:root {
+  --bg: #0b0f14;
+  --fg: #e7eef7;
+  --muted: #9fb0c3;
+  --panel: #121821;
+  --grid: #1d2733;
+  --accent1: #4aa3ff; /* index */
+  --accent2: #ffd166; /* yoy_q */
+  --accent3: #ef476f; /* yoy_e */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  background: rgba(11,15,20,0.75);
+  border-bottom: 1px solid #17202a;
+}
+
+header .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #233142;
+  background: #0f141b;
+  color: var(--fg);
+  width: 280px;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #1a2430;
+  border-radius: 14px;
+  padding: 10px 10px 6px;
+  box-shadow: 0 1px 0 #0c1117;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px 8px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.axis path,
+.axis line {
+  stroke: #2a394b;
+}
+
+.tick text {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.gridline {
+  stroke: var(--grid);
+  stroke-width: 1px;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 4px 6px 8px;
+}
+
+.legend .swatch {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.dash {
+  background: linear-gradient(90deg, var(--accent2) 60%, transparent 60%);
+  background-size: 8px 3px;
+}
+
+.sw1 { background: var(--accent1); }
+.sw2 { background: var(--accent2); }
+.sw3 { background: var(--accent3); }
+
+.y0 { stroke: #3a4b61; }
+
+.emptystate {
+  color: var(--muted);
+  padding: 24px;
+}
